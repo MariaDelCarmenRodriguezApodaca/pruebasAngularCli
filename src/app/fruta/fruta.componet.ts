@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { log } from 'util';
 
 @Component({
     selector: 'fruta',
@@ -32,13 +33,24 @@ export class FrutaComponent{
     }
     //es una buena practica para llamar metodos no llamarlos desde el constructor si no desde el ngOnInit este es el segundo metodo que se carga osea despues del constructor
     ngOnInit(): void {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
         this.holaMundo(this.nombre);
+
+        //variables y alcance
+        var uno = 1;
+        var dos = 2;
+
+        if(uno == 1){
+            let uno = 'uno'; //existe dentro del bloque que la contiene
+            var dos = 88;
+            console.log('dentro del if: ',uno);
+        };
+        
+        console.log('Fuera del if:',uno);
+        
     }
 
     holaMundo(nombre){
         this.nombre = "Maria";
-        alert('Hola Mundo '+nombre);
+        //alert('Hola Mundo '+nombre);
     }
 }
