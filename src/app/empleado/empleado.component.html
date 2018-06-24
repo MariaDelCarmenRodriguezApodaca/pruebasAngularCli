@@ -1,9 +1,61 @@
 <h3 style="color: blue;">
     {{ titulo }}
 </h3>
+<hr>
+
+<!-- two way dusata-bindig -->
+<h3>Selector de colores</h3>
+
+<!-- <input type="color" [(ngModel)]="colorSeleccionado">  -->
+<input type="text" [(ngModel)]="colorSeleccionado"><br><br>
+<button (click)="logColorSeleccionado()">Mostrar en consola</button>
+<pre [style.border]='(colorSeleccionado == "red" || colorSeleccionado=="purple") ? "2px solid black" : "2px solid lightblue" '>
+    Color seleccionado:
+    {{ colorSeleccionado }}
+</pre>
+
+<div [ngStyle]="{
+    'background': colorSeleccionado,
+    'width':'200px',
+    'height':'200px',
+    'float':'right',
+    'margin-right':'69%'
+    }">
+
+</div>
+<div style="clear:both"></div>
+<hr>
+<!-- switch -->
+<h3>Colores Switch</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase='"red"' [ngStyle]="{
+            'color': color, 
+            'background':'#D99A6A',
+            'padding':'10px'
+            }"
+        >Es de color rojo
+    </li>
+    <li *ngSwitchCase='"green"' [ngStyle]="{
+            'color': color, 
+            'background':'#A1EC8D',
+            'padding':'10px'
+            }"
+        >Es de color verde
+    </li>
+    <li *ngSwitchCase='"blue"' [ngStyle]="{
+            'color': color, 
+            'background':'#8DD4E4',
+            'padding':'10px'
+            }"
+        >Es de color azul
+    </li>
+</ul>
+
+<hr>
 
 <strong>Empleado estrella:</strong>
 <br><br>
+<!-- condicionales -->
 <div  *ngIf="trabajadorExterno == true" >
     <button (click)="carbiarExterno(false)">Mostrar Trabajador</button>
     <ul>
@@ -24,9 +76,11 @@
     </ul> 
 </div>
 
+<hr>
 
 <h4>Listado de empleados</h4>
 <ul id="trabajadores">
+    <!-- for -->
     <li *ngFor="let empleado of trabajadores; let i = index">
         <strong>Empleado {{ i+1 }}: {{ empleado.nombre }}</strong>
         <ul>
@@ -36,3 +90,7 @@
         </ul>
     </li>
 </ul>
+
+<hr>
+
+

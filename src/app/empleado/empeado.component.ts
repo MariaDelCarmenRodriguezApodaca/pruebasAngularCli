@@ -12,6 +12,8 @@ export class empleadoComponent{
     public empleado:Empleado; //declaramos una variable de tipo empleadoi
     public trabajadores:Array<Empleado>;//ejemplo de array de tipo empleado
     public trabajadorExterno:boolean;
+    public color:string;
+    public colorSeleccionado:string;
 
     constructor(){
         //inicializo un objeto de tipo empleado:
@@ -24,6 +26,8 @@ export class empleadoComponent{
             new Empleado('Pancin Rodriguez',21,'Director Gnral',true),
         ];
         this.trabajadorExterno = false;
+        this.color = 'blue';
+        this.colorSeleccionado = '#ccc'
     }
     ngOnInit(){
         //muestro el objeto de tipo empleado
@@ -41,5 +45,8 @@ export class empleadoComponent{
 
     carbiarExterno(valor){
         this.trabajadorExterno = valor;
+    }
+    logColorSeleccionado(){
+        console.log(`Color seleccionado: ${this.colorSeleccionado}`)
     }
 }
