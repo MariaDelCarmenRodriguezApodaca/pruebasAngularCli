@@ -3,16 +3,26 @@
 </h3>
 <hr>
 
-<!-- two way dusata-bindig -->
+<!-- two way data-bindig -->
 <h3>Selector de colores</h3>
 
 <!-- <input type="color" [(ngModel)]="colorSeleccionado">  -->
 <input type="text" [(ngModel)]="colorSeleccionado"><br><br>
 <button (click)="logColorSeleccionado()">Mostrar en consola</button>
-<pre [style.border]='(colorSeleccionado == "red" || colorSeleccionado=="purple") ? "2px solid black" : "2px solid lightblue" '>
+
+<pre 
+[style.border]='(colorSeleccionado == "red" || colorSeleccionado=="purple") ? "2px solid black" : "2px solid lightblue" '
+[ngClass]="{
+    fondoAzul: colorSeleccionado == 'blue',
+    fondoRojo: colorSeleccionado == 'red',
+    fondoVerde: colorSeleccionado == 'green',
+    letraGrande: 1==1 
+}"
+>
     Color seleccionado:
     {{ colorSeleccionado }}
 </pre>
+
 
 <div [ngStyle]="{
     'background': colorSeleccionado,
@@ -25,6 +35,7 @@
 </div>
 <div style="clear:both"></div>
 <hr>
+
 <!-- switch -->
 <h3>Colores Switch</h3>
 <ul [ngSwitch]="color">

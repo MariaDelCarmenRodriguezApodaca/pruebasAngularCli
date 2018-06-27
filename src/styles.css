@@ -1,1 +1,17 @@
+/* Esta hoja de estilos no es necesaria importarla en el index ya esta definida por defecto */
 /* You can add global styles to this file, and also import other style files */
+.bordeAzul{
+    border: 5px solid blue !important;
+}
+.fondoAzul{
+    background: lightblue;
+}
+.fondoRojo{
+    background: lightcoral;
+}
+.fondoVerde{
+    background: lightgreen;
+}
+.letraGrande{
+    font-size: x-large;
+}
