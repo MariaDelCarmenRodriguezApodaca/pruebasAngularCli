@@ -4,6 +4,20 @@
   <h1>Componente base principal</h1>
   <h1>{{ nombre }}</h1>
   <hr>
+  <nav>
+  	<!-- <a href="/home">Home</a> 
+  	<a href="/fruta">Furta</a>
+  	<a href="/empleado">Empleado</a>
+  	<a href="/contacto">Contacto</a >-->
+  		<!-- Usare ña directiva routerlink para que todo sea dinamico -->
+  	<a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a> 
+  	<!-- para cuando esten activados se le cambia la clase al link a activado, podemos buscar el en ../stylos.css -->
+  	<a [routerLink]="['/fruta']" [routerLinkActive]="['activado']">Fruta</a>
+  	<a [routerLink]="['/empleado']" [routerLinkActive]="['activado']">Empleado</a>
+  	<a [routerLink]="['/contacto']" [routerLinkActive]="['activado']">Contacto</a >
+  </nav>
+  <hr>
   <!-- <fruta> ... cargando </fruta> -->
-  <empleado>...Cargando</empleado>
-
+  <!-- <empleado>...Cargando</empleado> -->
+  <!-- El router-oulet es para que cargen las rutas -->
+<router-outlet> </router-outlet>

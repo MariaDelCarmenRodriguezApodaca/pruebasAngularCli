@@ -6,13 +6,13 @@ import { Empleado } from './empleado'; //impoto la clase empleado
     templateUrl : './empleado.component.html'
 })
 
-export class empleadoComponent{
+export class EmpleadoComponent{
 
     public titulo = 'componente empleados'
     public empleado:Empleado; //declaramos una variable de tipo empleadoi
     public trabajadores:Array<Empleado>;//ejemplo de array de tipo empleado
     public trabajadorExterno:boolean;
-    public color:string;
+    public color:string;   
     public colorSeleccionado:string;
 
     constructor(){
@@ -33,7 +33,6 @@ export class empleadoComponent{
         //muestro el objeto de tipo empleado
         console.log(this.empleado);
         console.log(this.trabajadores);
-
         //esto no esta en el curso: imprimire todos los trabajadores en el documento
         // var trabajadoresStr:string="";
         // for(let i=0; i < this.trabajadores.length; i++){

@@ -15,3 +15,11 @@
 .letraGrande{
     font-size: x-large;
 }
+a{
+	padding: 5px;
+}
+/*Para los link que esten activados*/
+.activado{
+	border: 1px solid blue;
+	color: blue;
+}
