@@ -1,1 +1,13 @@
 <h3>{{ titulo }}</h3>
+
+<hr>
+<div *ngIf="parametro">
+<label>El parametro es:</label>
+<h3>{{ parametro }}</h3>
+</div>
+
+<div *ngIf="!parametro">
+	<button (click)="redirigir()">Mostrar URL Con Parametro</button>
+</div>
+
+<button (click)="home()">Ir a Home</button>
