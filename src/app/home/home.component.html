@@ -1,1 +1,39 @@
-<h3>{{ titulo }}</h3>
+<!-- lowercase es la pipe para minuscula -->
+<h3>{{ titulo | lowercase }}</h3>
+<br>
+<!-- para usar una pipe se hace con | -->
+-{{ fecha | date:'dd/MM/yyyy'}}<br>
+<!-- se pueen poner varias pipes uppercase es para mayusculas -->
+-{{ fecha | date:'fullDate' | uppercase }}<br>
+-{{ nombre | uppercase }}
+<br><br>
+<!-- pasando dos parametros a una pipe que yo hice 8) -->
+{{ 5 | conversor :7 }}
+<br><br>
+
+
+
+<br>
+<label>Añadir prenda</label>
+<input type="text" name="prenda" [(ngModel)]="prenda_a_guardar">
+<button (click)="addPrenda(prenda_a_guardar)">Añadir Prenda</button>
+<br><br>
+<div *ngIf="prenda_a_guardar">
+	<p>Se añadira a la coleccion de ropa:{{ prenda_a_guardar }}</p>
+</div>
+<br>
+
+
+<div *ngIf="listado_ropa">
+	<h3>Listado de prendas de ropa</h3>
+	<ul>
+		<!-- con i = index se obtuvo el indice de la prenda -->
+		<li *ngFor='let prenda of listado_ropa; let i = index'>
+		{{ prenda }}
+		<button (click)="eliminarPrenda(i)" >Borrar</button>
+		</li>
+	</ul>
+</div>
+
+
+

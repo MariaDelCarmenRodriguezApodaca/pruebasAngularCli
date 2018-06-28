@@ -12,15 +12,18 @@ import { ContactoComponent } from './contacto/contacto.component';
 
 //yo lo importe
 import { FormsModule } from '@angular/forms'
+//importare la pipe
+import { ConversorPipe } from './pipes/conversor.pipe';
 
-
+//delcarations = {directivas pipes y componentes}
 @NgModule({
   declarations: [
     AppComponent,
     FrutaComponent,
     EmpleadoComponent,
     HomeComponent,
-    ContactoComponent
+    ContactoComponent,
+    ConversorPipe
   ],
   imports: [
     BrowserModule,
