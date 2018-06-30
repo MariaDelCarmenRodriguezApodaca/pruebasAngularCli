@@ -13,6 +13,7 @@ import { PeticionesService } from '../services/peticiones.service';
 export class CochesComponent{
 	public coche:Coche;
 	public coches:Array<Coche>;
+	public articulos;
 
 	constructor(
 		private _peticionesService:PeticionesService
@@ -25,7 +26,25 @@ export class CochesComponent{
 		]
 	}
 	ngOnInit(){
-		console.log(this._peticionesService.getPrueba());
+		/*
+		NOTAS: 	
+			ejecutamos el metodo GetArticulos y nos suscribimos a el
+			el subscribe lleva dos funcoines de callback una por si trae 
+			respuesta y otro por si sucede un erro
+		*/
+		this._peticionesService.getArticulos().subscribe(
+			result => {
+				this.articulos = result;
+				if(!this.articulos){
+					console.log('Error en el servidor');
+				}
+			},
+			error => {
+				var errMessage = <any> error;
+				console.log('----------------------');
+				console.log(errMessage);
+			}
+		);
 	}
 	public onSubmit(){
 		this.coches.push(new Coche(this.coche.nombre,this.coche.caballaje,this.coche.color))

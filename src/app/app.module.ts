@@ -16,7 +16,8 @@ import { CochesComponent } from './coches/coches.component';
 import { FormsModule } from '@angular/forms'
 //importare la pipe
 import { ConversorPipe } from './pipes/conversor.pipe';
-
+//importamos httpModule
+import { HttpModule } from '@angular/http';
 
 //delcarations = {directivas pipes y componentes}
 @NgModule({
@@ -32,7 +33,8 @@ import { ConversorPipe } from './pipes/conversor.pipe';
   imports: [
     BrowserModule,
     FormsModule,
-    routing 
+    routing,
+    HttpModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent] //se indica el componente principal con el que la app se lanza

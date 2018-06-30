@@ -27,6 +27,10 @@
 		float:left;
 		margin-left:50px;
 	}
+	.cargando{
+		color: blue;
+	}
+
 </style>
 
 <div class="myFloatLeft">
@@ -61,6 +65,7 @@
 </form>
 </div>
 
+<hr>
 
 <div *ngIf="coches" class="listado">
 	<h3>Listado de Coches</h3>
@@ -70,5 +75,19 @@
 			<button (click)="delete(i)">Borrar</button>
 		</li>
 	</ul>
+</div>
+
+
+
+<div class="listado">
+	<h3>Listado de articulos</h3>
+	<p>Ejemplo con una petición http</p>
+	<!-- Para efecto de cargando -->
+	<ul *ngIf="articulos">
+		<li *ngFor= "let articulo of articulos; let i = index">
+			{{articulo.id}} - {{articulo.title}} 
+		</li>
+	</ul>
+	<span *ngIf="!articulos" class="cargando">Cargando Listado</span>
 </div>
 
