@@ -9,6 +9,8 @@ import { EmpleadoComponent } from './empleado/empeado.component';
 import { FrutaComponent } from './fruta/fruta.componet';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CochesComponent } from './coches/coches.component';
+
 //creamos un array de tipo routes
 const appRoutes:Routes=[
 	{ path:'', component:HomeComponent},//cuando no ingresa ninguna ruta abre esta pagina
@@ -17,6 +19,7 @@ const appRoutes:Routes=[
 	{ path:'fruta', component:FrutaComponent },
 	{ path:'contacto', component:ContactoComponent},
 	{ path:'contacto/:page', component:ContactoComponent},
+	{ path:'coches', component:CochesComponent },
 	{ path:'**',component:HomeComponent} //cuando se produce un error muestra esta pagina
 ]
 
