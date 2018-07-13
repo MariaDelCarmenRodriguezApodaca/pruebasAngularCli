@@ -10,7 +10,7 @@ import { EmpleadoComponent } from './empleado/empeado.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CochesComponent } from './coches/coches.component';
-
+import { PlantillasComponent} from './plantillas/plantillas.component';
 
 //yo lo importe
 import { FormsModule } from '@angular/forms'
@@ -28,7 +28,8 @@ import { HttpModule } from '@angular/http';
     HomeComponent,
     ContactoComponent,
     ConversorPipe,
-    CochesComponent
+    CochesComponent,
+    PlantillasComponent
   ],
   imports: [
     BrowserModule,

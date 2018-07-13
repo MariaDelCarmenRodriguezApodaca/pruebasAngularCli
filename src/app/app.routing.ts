@@ -10,11 +10,13 @@ import { FrutaComponent } from './fruta/fruta.componet';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CochesComponent } from './coches/coches.component';
+import { PlantillasComponent} from './plantillas/plantillas.component';
 
 //creamos un array de tipo routes
 const appRoutes:Routes=[
 	{ path:'', component:HomeComponent},//cuando no ingresa ninguna ruta abre esta pagina
 	{ path:'home', component:HomeComponent },
+	{ path:'plantillas', component:PlantillasComponent},
 	{ path:'empleado', component: EmpleadoComponent },
 	{ path:'fruta', component:FrutaComponent },
 	{ path:'contacto', component:ContactoComponent},

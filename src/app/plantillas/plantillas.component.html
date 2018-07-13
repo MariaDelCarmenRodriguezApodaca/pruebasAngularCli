@@ -1,0 +1,32 @@
+<h3>{{ titulo }}</h3>
+<style type="text/css">
+	.yes{
+		color: blue;
+	}
+	.no{
+		color: red;
+	}
+</style>
+
+<button (click)="cambiar()">cambiar a {{ !administrador }}</button>
+<br>
+<br>
+<!-- *ngIf = "condicion; then si se cumple else si no"  -->
+<div *ngIf="administrador; then siAdmin else noAdmin" class="yes"></div>
+
+<ng-template #siAdmin>
+	<strong class="yes">
+		Eres el administrador de la webapp
+	</strong>
+</ng-template>
+<ng-template #noAdmin>
+	<strong class="no">
+		No eres el administrador de la webapp
+	</strong>
+</ng-template>
+
+
+
+
+
+
